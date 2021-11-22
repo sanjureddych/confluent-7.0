@@ -1,4 +1,4 @@
-##CLUSTER LINKING:
+## CLUSTER LINKING:
 Cluster Linking replicates topics from one Kafka or Confluent cluster to another, providing the following capabilities:
 Global Replication
 Hybrid cloud
@@ -15,7 +15,7 @@ Requires an inter-broker protocol (IBP) of 2.4 or higher on the source cluster, 
 Requires password.encoder.secret to be set on the Confluent Platform destination cluster’s brokers.
 The source cluster can be Kafka or Confluent Server or Confluent Cloud; the destination cluster must be Confluent Server, which is bundled with Confluent Enterprise.
 
-#Configurations 
+# Configurations 
 To enable Cluster Linking, add the above configuration to the broker configuration on the destination cluster 
 confluent.cluster.link.enable: “true”
 Other configurations available:
@@ -28,8 +28,8 @@ There are few other configs available, we can check them out in confluent docs.
 Required Configurations for Control Center
 Cluster Linking requires embedded v3 Confluent REST Proxy to communicate with Confluent Control Center and properly display mirror topics on the Control Center UI
 
-# Kafka REST endpoint URL
-confluent.controlcenter.streams.cprest.url=“http://localhost:8090"
+'''#Kafka REST endpoint URL
+confluent.controlcenter.streams.cprest.url=“http://localhost:8090"'''
 
 Cluster Linking does not require the Metadata Service (MDS) or security to run, but if you want to configure security, you can get started with the following example which shows an MDS client configuration for RBAC.
 You can use confluent.metadata.server.listeners (which will enable the Metadata Service) instead of confluent.http.server.listeners to listen for API requests. Use either confluent.metadata.server.listeners or confluent.http.server.listeners, but not both. If a listener uses HTTPS, then appropriate SSL configuration parameters must also be set. 
